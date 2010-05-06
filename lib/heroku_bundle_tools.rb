@@ -1,5 +1,6 @@
 require 'ruble'
 require 'ruble/ui'
+require 'escape'
 
 class CommandRunner
   def initialize(command)
@@ -32,8 +33,7 @@ module HerokuTools
   end
   
   def self.shell_escape(string)
-    # TODO: escape for shell
-    string
+    e_sh(string)
   end
 end
 
@@ -43,8 +43,11 @@ module HerokuCmd
   end
   
   def self.run(command)
-    command = "heroku #{command}"
-    unless system('heroku help')
+    # FIXME Doesn't seem to find my heroku installed in rvm
+    #heroku_path = "~/.rvm/gems/ruby-1.8.7-p249/bin/heroku"
+    heroku_path = "heroku"
+    command = "#{heroku_path} #{command}"
+    unless system("#{heroku_path} help")
       # heroku gem is probably not installed, check to make sure
       if gem_is_installed?('heroku')
         Ruble::UI.alert(:error, "Heroku command failed", "The Heroku gem appears to be installed but the heroku command failed to run.")
@@ -54,7 +57,7 @@ module HerokuCmd
             :title => "Install Heroku gem?", 
             :prompt => "The Heroku gem was not found on your system. Would you like to install the heroku gem now?",
             :button1 => "Install Heroku gem")
-          command = "sudo gem install heroku && #{command}"
+          command = "sudo gem install heroku && #{command}" # TODO We dont necessarily want to run under sudo!
         else
           return false
         end
