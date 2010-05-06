@@ -13,8 +13,10 @@ command 'Create App' do |cmd|
   cmd.scope = ['source.ruby', 'project.rails']
   cmd.output = :discard
   cmd.working_directory = :current_project
-  cmd.invoke do
-    HerokuCmd.run("create")
+  cmd.invoke do |context|
+    cmd = "create"
+    cmd << " #{ENV['HEROKU_APP_NAME']}" if ENV['HEROKU_APP_NAME']
+    HerokuCmd.run(cmd)
   end
 end
 
