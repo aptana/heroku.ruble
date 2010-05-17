@@ -5,7 +5,7 @@ require 'ruble'
 bundle 'Heroku' do |bundle|
   bundle.author = 'Kris Rasmussen'
   bundle.copyright = <<END
-© Copyright 2010 Aptana Inc. Distributed under the MIT license.
+ï¿½ Copyright 2010 Aptana Inc. Distributed under the MIT license.
 END
 
   bundle.description = <<END
@@ -26,6 +26,7 @@ END
       sharing.command "Remove Collaborator"
     end
     menu.menu "Database" do |database|
+      database.command "Rake db:migrate on Heroku"
       database.command "Push Local Database to Heroku"
       database.command "Pull Remote Database from Heroku"
     end
@@ -47,8 +48,6 @@ END
     end
     menu.command "App Info"
     menu.command "Rename App"
-    
-    
         
     #rdoc.menu 'Format' do |format|
      # format.command "Bold"
