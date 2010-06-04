@@ -5,9 +5,12 @@ command 'Add Config Var' do |cmd|
   cmd.output = :discard
   cmd.working_directory = :current_project
   cmd.invoke do
-    name = HerokuTools.prompt('Variable Name:').upcase
+    name = HerokuTools.prompt('Variable Name:')
     value = HerokuTools.prompt('Variable Value:')
-    HerokuCmd.run("config:add #{HerokuTools.shell_escape(name)}=#{HerokuTools.shell_escape(value)}")
+    if name && value
+      name = name.upcase
+      HerokuCmd.run("config:add #{HerokuTools.shell_escape(name)}=#{HerokuTools.shell_escape(value)}")
+    end
   end
 end
 

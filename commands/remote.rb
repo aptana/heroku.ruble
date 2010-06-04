@@ -15,7 +15,9 @@ command "Rake Command" do |cmd|
   cmd.working_directory = :current_project
   cmd.invoke do
     new_name = HerokuTools.prompt('Command:')
-    new_name = new_name.sub(/^\s*rake\s+/, '')
-    HerokuCmd.run("rake #{HerokuTools.shell_escape(new_name)}")
+    if new_name
+      new_name = new_name.sub(/^\s*rake\s+/, '')
+      HerokuCmd.run("rake #{HerokuTools.shell_escape(new_name)}")
+    end
   end
 end
