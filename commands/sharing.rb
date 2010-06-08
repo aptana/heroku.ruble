@@ -6,7 +6,9 @@ command 'Add Collaborator' do |cmd|
   cmd.working_directory = :current_project
   cmd.invoke do
     email = HerokuTools.prompt('Email address of collaborator:')
-    HerokuCmd.run("sharing:add #{HerokuTools.shell_escape(email)}")
+    if !email.nil? && !email.empty?
+      HerokuCmd.run("sharing:add #{HerokuTools.shell_escape(email)}")
+    end
   end
 end
 
@@ -16,6 +18,8 @@ command 'Remove Collaborator' do |cmd|
   cmd.working_directory = :current_project
   cmd.invoke do
     email = HerokuTools.prompt('Email address of collaborator:')
-    HerokuCmd.run("sharing:remove #{HerokuTools.shell_escape(email)}")
+    if !email.nil? && !email.empty?
+      HerokuCmd.run("sharing:remove #{HerokuTools.shell_escape(email)}")
+    end
   end
 end

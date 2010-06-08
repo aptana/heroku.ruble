@@ -45,7 +45,9 @@ command "Rename App" do |cmd|
   cmd.working_directory = :current_project
   cmd.invoke do
     new_name = HerokuTools.prompt('New App Name:')
-    Ruble::Terminal.open("heroku rename '#{HerokuTools.shell_escape(new_name)}'")
+    if !new_name.nil? && !new_name.empty?
+      Ruble::Terminal.open("heroku rename '#{HerokuTools.shell_escape(new_name)}'")
+    end
   end
 end
 
