@@ -29,6 +29,16 @@ command "Deploy App" do |cmd|
   end
 end
 
+command "Open App in Web Browser" do |cmd|
+  cmd.scope = ['source.ruby', 'project.rails']
+  cmd.output = :discard
+  cmd.working_directory = :current_project
+  cmd.invoke.windows = ""
+  cmd.invoke do
+    HerokuCmd.run("open")
+  end
+end
+
 command "Rename App" do |cmd|
   cmd.scope = ['source.ruby', 'project.rails']
   cmd.output = :discard

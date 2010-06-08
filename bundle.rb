@@ -21,6 +21,7 @@ END
     menu.separator
     menu.command "Deploy App"
     menu.separator
+    menu.command "Open App in Web Browser"
     menu.menu "Sharing" do |sharing|
       sharing.command "Add Collaborator"
       sharing.command "Remove Collaborator"
