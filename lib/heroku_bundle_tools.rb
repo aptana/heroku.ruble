@@ -44,7 +44,7 @@ module HerokuCmd
     if is_windows?
       `gem search #{name}` =~ /#{Regexp.escape(name)}/
     else
-      `/bin/sh -l -c "gem search{name}"` =~ /#{Regexp.escape(name) }/
+      `/bin/sh -l -c "gem search #{name}"` =~ /#{Regexp.escape(name) }/
     end
   end
   
