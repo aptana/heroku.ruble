@@ -1,4 +1,3 @@
-require 'heroku_bundle_tools'
 
 %w(On Off).each do |state|
   command "Turn Maintence #{state}" do |cmd|
@@ -6,6 +5,7 @@ require 'heroku_bundle_tools'
     cmd.output = :discard
     cmd.working_directory = :current_project
     cmd.invoke do
+      require 'heroku_bundle_tools'
       HerokuCmd.run("maintenance:#{state.downcase}")
     end
   end

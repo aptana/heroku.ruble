@@ -1,10 +1,10 @@
-require 'heroku_bundle_tools'
 
 command 'App Info' do |cmd|
   cmd.scope = ['source.ruby', 'project.rails']
   cmd.output = :discard
   cmd.working_directory = :current_project
   cmd.invoke do
+    require 'heroku_bundle_tools'
     HerokuCmd.run("info")
   end
 end
@@ -14,6 +14,7 @@ command 'Create App' do |cmd|
   cmd.output = :discard
   cmd.working_directory = :current_project
   cmd.invoke do |context|
+    require 'heroku_bundle_tools'
     cmd = "create"
     cmd << " #{ENV['HEROKU_APP_NAME']}" if ENV['HEROKU_APP_NAME']
     HerokuCmd.run(cmd)
@@ -25,6 +26,7 @@ command "Deploy App" do |cmd|
   cmd.output = :discard
   cmd.working_directory = :current_project
   cmd.invoke do
+    require 'heroku_bundle_tools'
     Ruble::Terminal.open("git push heroku master")
   end
 end
@@ -35,6 +37,7 @@ command "Open App in Web Browser" do |cmd|
   cmd.working_directory = :current_project
   cmd.invoke.windows = ""
   cmd.invoke do
+    require 'heroku_bundle_tools'
     HerokuCmd.run("open")
   end
 end
@@ -44,6 +47,7 @@ command "Rename App" do |cmd|
   cmd.output = :discard
   cmd.working_directory = :current_project
   cmd.invoke do
+    require 'heroku_bundle_tools'
     new_name = HerokuTools.prompt('New App Name:')
     if !new_name.nil? && !new_name.empty?
       Ruble::Terminal.open("heroku rename '#{HerokuTools.shell_escape(new_name)}'")
@@ -57,6 +61,7 @@ cmd.scope = ['source.ruby', 'project.rails']
   cmd.output = :discard
   cmd.working_directory = :current_project
   cmd.invoke do |context|
+    require 'heroku_bundle_tools'
     cmd = "create"
     cmd << " #{ENV['HEROKU_APP_NAME']}" if ENV['HEROKU_APP_NAME']
     cmd << "; git push heroku master"
