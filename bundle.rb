@@ -5,7 +5,7 @@ require 'ruble'
 bundle 'Heroku' do |bundle|
   bundle.author = 'Kris Rasmussen'
   bundle.copyright = <<END
-� Copyright 2010 Aptana Inc. Distributed under the MIT license.
+¬© Copyright 2010 Aptana Inc. Distributed under the MIT license.
 END
 
   bundle.description = <<END
