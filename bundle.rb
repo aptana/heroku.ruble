@@ -4,14 +4,8 @@ require 'ruble'
 # many ruby files could add to a single bundle
 bundle 'Heroku' do |bundle|
   bundle.author = 'Kris Rasmussen'
-  bundle.copyright = <<END
-¬© Copyright 2010 Aptana Inc. Distributed under the MIT license.
-END
-
-  bundle.description = <<END
-Easy deployment with Heroku from within Studio 3
-END
-  
+  bundle.copyright = "© Copyright 2010 Aptana Inc. Distributed under the MIT license."
+  bundle.description = 'Easy deployment with Heroku from within Studio 3' 
   bundle.repository = "git://github.com/aptana/heroku.ruble.git"
 
   bundle.menu "Heroku" do |menu|
