@@ -164,6 +164,86 @@ children:
   displayName: Heroku
   path: bundle.rb
   scope: source.ruby, project.rails
+- !!com.aptana.scripting.model.CommandElement {async: false, customProperties: null,
+  displayName: App Info, inputPath: null, keyBindingMap: null, outputPath: null, outputType: discard,
+  path: commands/app.rb, runType: current_thread, scope: 'source.ruby, project.rails',
+  workingDirectoryType: CURRENT_PROJECT}
+- !!com.aptana.scripting.model.CommandElement {async: false, customProperties: null,
+  displayName: Create App, inputPath: null, keyBindingMap: null, outputPath: null,
+  outputType: discard, path: commands/app.rb, runType: current_thread, scope: 'source.ruby,
+    project.rails', workingDirectoryType: CURRENT_PROJECT}
+- !!com.aptana.scripting.model.CommandElement {async: false, customProperties: null,
+  displayName: Deploy App, inputPath: null, keyBindingMap: null, outputPath: null,
+  outputType: discard, path: commands/app.rb, runType: current_thread, scope: 'source.ruby,
+    project.rails', workingDirectoryType: CURRENT_PROJECT}
+- !!com.aptana.scripting.model.CommandElement {async: false, customProperties: null,
+  displayName: Open App in Web Browser, inputPath: null, keyBindingMap: null, outputPath: null,
+  outputType: discard, path: commands/app.rb, runType: current_thread, scope: 'source.ruby,
+    project.rails', workingDirectoryType: CURRENT_PROJECT}
+- !!com.aptana.scripting.model.CommandElement {async: false, customProperties: null,
+  displayName: Rename App, inputPath: null, keyBindingMap: null, outputPath: null,
+  outputType: discard, path: commands/app.rb, runType: current_thread, scope: 'source.ruby,
+    project.rails', workingDirectoryType: CURRENT_PROJECT}
+- !!com.aptana.scripting.model.CommandElement {async: false, customProperties: null,
+  displayName: Create and Deploy App, inputPath: null, keyBindingMap: null, outputPath: null,
+  outputType: discard, path: commands/app.rb, runType: current_thread, scope: 'source.ruby,
+    project.rails', workingDirectoryType: CURRENT_PROJECT}
+- !!com.aptana.scripting.model.CommandElement {async: false, customProperties: null,
+  displayName: Download Bundle, inputPath: null, keyBindingMap: null, outputPath: null,
+  outputType: discard, path: commands/backups.rb, runType: current_thread, scope: 'source.ruby,
+    project.rails', workingDirectoryType: CURRENT_PROJECT}
+- !!com.aptana.scripting.model.CommandElement {async: false, customProperties: null,
+  displayName: Capture Bundle, inputPath: null, keyBindingMap: null, outputPath: null,
+  outputType: discard, path: commands/backups.rb, runType: current_thread, scope: 'source.ruby,
+    project.rails', workingDirectoryType: CURRENT_PROJECT}
+- !!com.aptana.scripting.model.CommandElement {async: false, customProperties: null,
+  displayName: Add Config Var, inputPath: null, keyBindingMap: null, outputPath: null,
+  outputType: discard, path: commands/config_vars.rb, runType: current_thread, scope: 'source.ruby,
+    project.rails', workingDirectoryType: CURRENT_PROJECT}
+- !!com.aptana.scripting.model.CommandElement {async: false, customProperties: null,
+  displayName: Clear Config Vars, inputPath: null, keyBindingMap: null, outputPath: null,
+  outputType: discard, path: commands/config_vars.rb, runType: current_thread, scope: 'source.ruby,
+    project.rails', workingDirectoryType: CURRENT_PROJECT}
+- !!com.aptana.scripting.model.CommandElement {async: false, customProperties: null,
+  displayName: 'Rake db:migrate on Heroku', inputPath: null, keyBindingMap: null,
+  outputPath: null, outputType: discard, path: commands/database.rb, runType: current_thread,
+  scope: 'source.ruby, project.rails', workingDirectoryType: CURRENT_PROJECT}
+- !!com.aptana.scripting.model.CommandElement {async: false, customProperties: null,
+  displayName: Push Local Database to Heroku, inputPath: null, keyBindingMap: null,
+  outputPath: null, outputType: discard, path: commands/database.rb, runType: current_thread,
+  scope: 'source.ruby, project.rails', workingDirectoryType: CURRENT_PROJECT}
+- !!com.aptana.scripting.model.CommandElement {async: false, customProperties: null,
+  displayName: Pull Remote Database from Heroku, inputPath: null, keyBindingMap: null,
+  outputPath: null, outputType: discard, path: commands/database.rb, runType: current_thread,
+  scope: 'source.ruby, project.rails', workingDirectoryType: CURRENT_PROJECT}
+- !!com.aptana.scripting.model.CommandElement {async: false, customProperties: null,
+  displayName: Install Gem, inputPath: null, keyBindingMap: null, outputPath: null,
+  outputType: discard, path: commands/install.rb, runType: current_thread, scope: 'source.ruby,
+    project.rails', workingDirectoryType: CURRENT_PROJECT}
+- !!com.aptana.scripting.model.CommandElement {async: false, customProperties: null,
+  displayName: Turn Maintence On, inputPath: null, keyBindingMap: null, outputPath: null,
+  outputType: discard, path: commands/maintenance.rb, runType: current_thread, scope: 'source.ruby,
+    project.rails', workingDirectoryType: CURRENT_PROJECT}
+- !!com.aptana.scripting.model.CommandElement {async: false, customProperties: null,
+  displayName: Turn Maintence Off, inputPath: null, keyBindingMap: null, outputPath: null,
+  outputType: discard, path: commands/maintenance.rb, runType: current_thread, scope: 'source.ruby,
+    project.rails', workingDirectoryType: CURRENT_PROJECT}
+- !!com.aptana.scripting.model.CommandElement {async: false, customProperties: null,
+  displayName: Console, inputPath: null, keyBindingMap: null, outputPath: null, outputType: discard,
+  path: commands/remote.rb, runType: current_thread, scope: 'source.ruby, project.rails',
+  workingDirectoryType: CURRENT_PROJECT}
+- !!com.aptana.scripting.model.CommandElement {async: false, customProperties: null,
+  displayName: Rake Command, inputPath: null, keyBindingMap: null, outputPath: null,
+  outputType: discard, path: commands/remote.rb, runType: current_thread, scope: 'source.ruby,
+    project.rails', workingDirectoryType: CURRENT_PROJECT}
+- !!com.aptana.scripting.model.CommandElement {async: false, customProperties: null,
+  displayName: Add Collaborator, inputPath: null, keyBindingMap: null, outputPath: null,
+  outputType: discard, path: commands/sharing.rb, runType: current_thread, scope: 'source.ruby,
+    project.rails', workingDirectoryType: CURRENT_PROJECT}
+- !!com.aptana.scripting.model.CommandElement {async: false, customProperties: null,
+  displayName: Remove Collaborator, inputPath: null, keyBindingMap: null, outputPath: null,
+  outputType: discard, path: commands/sharing.rb, runType: current_thread, scope: 'source.ruby,
+    project.rails', workingDirectoryType: CURRENT_PROJECT}
 copyright: © Copyright 2010 Aptana Inc. Distributed under the MIT license.
 customProperties: null
 decreaseIndentMarkers: &id002 {}
