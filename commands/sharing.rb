@@ -1,5 +1,6 @@
+require 'ruble'
 
-command 'Add Collaborator' do |cmd|
+command t(:add_collaborator) do |cmd|
   cmd.scope = ['source.ruby', 'project.rails']
   cmd.output = :discard
   cmd.working_directory = :current_project
@@ -12,7 +13,7 @@ command 'Add Collaborator' do |cmd|
   end
 end
 
-command 'Remove Collaborator' do |cmd|
+command t(:remove_collaborator) do |cmd|
   cmd.scope = ['source.ruby', 'project.rails']
   cmd.output = :discard
   cmd.working_directory = :current_project

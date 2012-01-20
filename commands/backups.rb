@@ -1,7 +1,9 @@
+require 'ruble'
+
 with_defaults :scope => ['source.ruby', 'project.rails'], 
               :output => :discard, 
               :working_directory => :current_project do
-  command "Download Bundle" do |cmd|
+  command t(:download_bundle) do |cmd|
     cmd.invoke do
       require 'heroku_bundle_tools'
       app_name = HerokuTools.prompt('Name of App to download:')
@@ -11,7 +13,7 @@ with_defaults :scope => ['source.ruby', 'project.rails'],
     end
   end
   
-  command "Capture Bundle" do |cmd|
+  command t(:capture_bundle) do |cmd|
     cmd.invoke do
       require 'heroku_bundle_tools'
       app_name = HerokuTools.prompt('Name of App to Capture:')

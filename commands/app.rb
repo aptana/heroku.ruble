@@ -1,5 +1,6 @@
+require 'ruble'
 
-command 'App Info' do |cmd|
+command t(:app_info) do |cmd|
   cmd.scope = ['source.ruby', 'project.rails']
   cmd.output = :discard
   cmd.working_directory = :current_project
@@ -9,7 +10,7 @@ command 'App Info' do |cmd|
   end
 end
 
-command 'Create App' do |cmd|
+command t(:create_app) do |cmd|
   cmd.scope = ['source.ruby', 'project.rails']
   cmd.output = :discard
   cmd.working_directory = :current_project
@@ -21,7 +22,7 @@ command 'Create App' do |cmd|
   end
 end
 
-command "Deploy App" do |cmd|
+command t(:deploy_app) do |cmd|
   cmd.scope = ['source.ruby', 'project.rails']
   cmd.output = :discard
   cmd.working_directory = :current_project
@@ -31,7 +32,7 @@ command "Deploy App" do |cmd|
   end
 end
 
-command "Open App in Web Browser" do |cmd|
+command t(:open_in_browser) do |cmd|
   cmd.scope = ['source.ruby', 'project.rails']
   cmd.output = :discard
   cmd.working_directory = :current_project
@@ -42,7 +43,7 @@ command "Open App in Web Browser" do |cmd|
   end
 end
 
-command "Rename App" do |cmd|
+command t(:rename_app) do |cmd|
   cmd.scope = ['source.ruby', 'project.rails']
   cmd.output = :discard
   cmd.working_directory = :current_project
@@ -56,7 +57,7 @@ command "Rename App" do |cmd|
 end
 
 # Special command used to create and deploy under deploy wizard. Not surfaced in Ruble UI
-command "Create and Deploy App" do |cmd|
+command t(:create_and_deploy_app) do |cmd|
 cmd.scope = ['source.ruby', 'project.rails']
   cmd.output = :discard
   cmd.working_directory = :current_project

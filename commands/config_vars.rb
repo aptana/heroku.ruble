@@ -1,5 +1,6 @@
+require 'ruble'
 
-command 'Add Config Var' do |cmd|
+command t(:add_config_var) do |cmd|
   cmd.scope = ['source.ruby', 'project.rails']
   cmd.output = :discard
   cmd.working_directory = :current_project
@@ -14,7 +15,7 @@ command 'Add Config Var' do |cmd|
   end
 end
 
-command 'Clear Config Vars' do |cmd|
+command t(:clear_config_vars) do |cmd|
   cmd.scope = ['source.ruby', 'project.rails']
   cmd.output = :discard
   cmd.working_directory = :current_project

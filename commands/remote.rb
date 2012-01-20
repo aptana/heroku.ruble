@@ -1,5 +1,6 @@
+require 'ruble'
 
-command "Console" do |cmd|
+command t(:console) do |cmd|
   cmd.scope = ['source.ruby', 'project.rails']
   cmd.output = :discard
   cmd.working_directory = :current_project
@@ -9,7 +10,7 @@ command "Console" do |cmd|
   end
 end
 
-command "Rake Command" do |cmd|
+command t(:rake_command) do |cmd|
   cmd.scope = ['source.ruby', 'project.rails']
   cmd.output = :discard
   cmd.working_directory = :current_project

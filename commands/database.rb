@@ -1,5 +1,6 @@
+require 'ruble'
 
-command 'Rake db:migrate on Heroku' do |cmd|
+command t(:rake_db_migrate) do |cmd|
   cmd.scope = ['source.ruby', 'project.rails']
   cmd.output = :discard
   cmd.working_directory = :current_project
@@ -9,7 +10,7 @@ command 'Rake db:migrate on Heroku' do |cmd|
   end
 end
 
-command 'Push Local Database to Heroku' do |cmd|
+command t(:push_database) do |cmd|
   cmd.scope = ['source.ruby', 'project.rails']
   cmd.output = :discard
   cmd.working_directory = :current_project
@@ -19,7 +20,7 @@ command 'Push Local Database to Heroku' do |cmd|
   end
 end
 
-command 'Pull Remote Database from Heroku' do |cmd|
+command t(:pull_database) do |cmd|
   cmd.scope = ['source.ruby', 'project.rails']
   cmd.output = :discard
   cmd.working_directory = :current_project

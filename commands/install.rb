@@ -1,6 +1,6 @@
 require 'ruble'
 
-command 'Install Gem' do |cmd|
+command t(:install_gem) do |cmd|
   cmd.scope = ['source.ruby', 'project.rails']
   cmd.output = :discard
   cmd.working_directory = :current_project

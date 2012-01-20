@@ -2,47 +2,47 @@ require 'ruble'
 
 # its ruby, so this just addscommands/snippets in bundle (or replaces those with same name)
 # many ruby files could add to a single bundle
-bundle 'Heroku' do |bundle|
+bundle t(:bundle_name) do |bundle|
   bundle.author = 'Kris Rasmussen'
   bundle.copyright = "Copyright 2010 Aptana Inc. Distributed under the MIT license."
   bundle.description = 'Easy deployment with Heroku from within Studio 3' 
   bundle.repository = "git://github.com/aptana/heroku.ruble.git"
 
-  bundle.menu "Heroku" do |menu|
+  bundle.menu t(:bundle_name) do |menu|
     menu.scope = [ "source.ruby", "project.rails" ]
 
-    menu.command "Create App"
+    menu.command t(:create_app)
     menu.separator
-    menu.command "Deploy App"
+    menu.command t(:deploy_app)
     menu.separator
-    menu.command "Open App in Web Browser"
-    menu.menu "Sharing" do |sharing|
-      sharing.command "Add Collaborator"
-      sharing.command "Remove Collaborator"
+    menu.command t(:open_in_browser)
+    menu.menu t(:sharing) do |sharing|
+      sharing.command t(:add_collaborator)
+      sharing.command t(:remove_collaborator)
     end
-    menu.menu "Database" do |database|
-      database.command "Rake db:migrate on Heroku"
-      database.command "Push Local Database to Heroku"
-      database.command "Pull Remote Database from Heroku"
+    menu.menu t(:database) do |database|
+      database.command t(:rake_db_migrate)
+      database.command t(:push_database)
+      database.command t(:pull_database)
     end
-    menu.menu "Maintenance" do |m|
-      m.command "Turn Maintence On"
-      m.command "Turn Maintence Off"
+    menu.menu t(:maintenance) do |m|
+      m.command t(:maintenance_on)
+      m.command t(:maintenance_off)
     end
-    menu.menu "Remote" do |remote|
-      remote.command "Console"
-      remote.command "Rake Command"
+    menu.menu t(:remote) do |remote|
+      remote.command t(:console)
+      remote.command t(:rake_command)
     end
-    menu.menu "Config Vars" do |config|
-      config.command "Add Config Var"
-      config.command "Clear Config Vars"
+    menu.menu t(:config_vars) do |config|
+      config.command t(:add_config_var)
+      config.command t(:clear_config_vars)
     end
-    menu.menu "Backups" do |bundles|
-      bundles.command "Capture Bundle"
-      bundles.command "Download Bundle"
+    menu.menu t(:backups) do |bundles|
+      bundles.command t(:capture_bundle)
+      bundles.command t(:download_bundle)
     end
-    menu.command "App Info"
-    menu.command "Rename App"
+    menu.command t(:app_info)
+    menu.command t(:rename_app)
         
     #rdoc.menu 'Format' do |format|
      # format.command "Bold"

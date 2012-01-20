@@ -1,12 +1,19 @@
+require 'ruble'
 
-%w(On Off).each do |state|
-  command "Turn Maintence #{state}" do |cmd|
-    cmd.scope = ['source.ruby', 'project.rails']
-    cmd.output = :discard
-    cmd.working_directory = :current_project
+with_defaults :scope => ['source.ruby', 'project.rails'], :output => :discard, :working_directory => :current_project do
+
+  command t(:maintenance_on) do |cmd|
     cmd.invoke do
       require 'heroku_bundle_tools'
-      HerokuCmd.run("maintenance:#{state.downcase}")
+      HerokuCmd.run("maintenance:on")
     end
   end
+
+  command t(:maintenance_off) do |cmd|
+    cmd.invoke do
+      require 'heroku_bundle_tools'
+      HerokuCmd.run("maintenance:off")
+    end
+  end
+
 end
